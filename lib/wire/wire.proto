@@ -79,6 +79,34 @@ enum MessageType {
   FileSystemGetMessage       = 82;
   ConnectStartedMessage      = 92;
   ConnectStoppedMessage      = 93;
+
+  TouchNodeInfoEvent         = 94;
+  AccessSetEnabledMessage    = 95;
+
+  DeviceAvatarMessage        = 100;
+
+  WeakNetSetMessage  = 97;
+  WeakNetResetMessage = 98;
+
+  QueryAppListMessage = 110;
+  LaunchAppMessage = 111;
+  TerminateAppMessage = 112;
+  UninstallAppMessage = 113;
+
+  StatisticsInsertMessage = 101;
+  StatisticsUpdateMessage = 102;
+
+  OTAInstallMessage = 103;
+
+}
+
+message WeakNetSetMessage {
+  required string wifiname = 1;
+  required string wifipass = 2;
+}
+
+message WeakNetResetMessage {
+  optional string wifiname = 1;
 }
 
 message ConnectStartedMessage {
@@ -232,6 +260,8 @@ message DeviceIdentityMessage {
   optional string cpuPlatform = 13;
   optional string openGLESVersion = 14;
   optional string marketName = 15;
+  optional string webRemoteUrl = 16;
+  optional string wdaPort = 17;
 }
 
 message DeviceProperty {
@@ -243,6 +273,7 @@ message DevicePropertiesMessage {
   required string serial = 1;
   repeated DeviceProperty properties = 2;
 }
+
 
 // Grouping
 
@@ -422,6 +453,11 @@ message InstallMessage {
   required string href = 1;
   required bool launch = 2;
   optional string manifest = 3;
+  optional bool OTA = 4;
+}
+
+message OTAInstallMessage {
+  required string href = 1;
 }
 
 message UninstallMessage {
@@ -533,6 +569,10 @@ message WifiSetEnabledMessage {
   required bool enabled = 1;
 }
 
+message AccessSetEnabledMessage {
+  required bool enabled = 1;
+}
+
 message WifiGetStatusMessage {
 }
 
@@ -573,4 +613,47 @@ message PhoneStateEvent {
 message RotationEvent {
   required string serial = 1;
   required int32 rotation = 2;
+}
+
+message TouchNodeInfoEvent {
+  required string serial = 1;
+  required string nodes = 2;
+}
+
+message DeviceAvatarMessage {
+  required string serial = 1;
+  required string path = 2;
+}
+
+message StatisticsInsertMessage{
+  required string serial = 1;
+  required string startUseTime = 2;
+  required string userName = 3;
+  required string model = 4;
+  optional double usageTime = 5;
+  optional double startTime = 6;
+}
+message StatisticsUpdateMessage{
+  required string serial = 1;
+  required string startUseTime = 2;
+  required string userName = 3;
+  required string model = 4;
+  required double usageTime = 5;
+  optional double startTime = 6;
+}
+
+message QueryAppListMessage{
+
+}
+
+message LaunchAppMessage {
+  required string bundleId = 1;
+}
+
+message TerminateAppMessage {
+  required string bundleId = 1;
+}
+
+message UninstallAppMessage {
+  required string bundleId = 1;
 }
