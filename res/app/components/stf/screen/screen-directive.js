@@ -714,8 +714,9 @@ module.exports = function DeviceScreenDirective(
 
           if (device.platform === 'iOS') {
             var ratio = 2
-            if (device.name !== 'iPhone XR' &&
-              (device.name.startsWith('iPhone X') || device.name.endsWith('Plus'))) {
+            var name = device.name||device.model||device.marketName
+            if (name !== 'iPhone XR' &&
+              (name.startsWith('iPhone X') || name.endsWith('Plus'))) {
               ratio = 3
             }
             scope.nowx /= ratio
