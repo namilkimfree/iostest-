@@ -5,7 +5,6 @@ body {
 .login2 {
     padding: 15px;
     background: #eeeeee;
-    font-family: Serif;
 }
 
 .login2 .login-wrapper {
@@ -77,12 +76,4 @@ body {
 .login2 .login-wrapper .social-login .twitter:hover {
     background-color: transparent;
     color: #00c7f7;
-}
-
-.form-group{
-  font-family: Serif;
-}
-
-.btn-lg{
-  font-family: Serif;
 }

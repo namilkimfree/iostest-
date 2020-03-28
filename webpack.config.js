@@ -65,7 +65,6 @@ module.exports = {
         , {test: /angular-animate\.js$/, loader: 'imports?angular=angular'}
         , {test: /angular-growl\.js$/, loader: 'imports?angular=angular'}
         , {test: /dialogs\.js$/, loader: 'script'}
-        , {test: /\.jsx/, loader: 'babel-loader'}
       ]
       // TODO: enable when its sane
       // preLoaders: [

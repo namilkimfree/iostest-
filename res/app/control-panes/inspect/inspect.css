@@ -1,20 +1,3 @@
 .stf-inspect {
 
 }
-
-.inspect-main{
-  height: 789px;
-  width: 100%
-}
-
-canvas {
-  position: absolute;
-}
-/*.huya-img, .huya-canvas{*/
-  /*width: 320px*/
-/*}*/
-
-img, canvas{
-  width: 320px;
-}
-

@@ -1,5 +1,4 @@
 module.exports = angular.module('stf/device/enhance-device', [
-  require('stf/app-state').name,
-  require('stf/control').name
+  require('stf/app-state').name
 ])
   .factory('EnhanceDeviceService', require('./enhance-device-service'))
